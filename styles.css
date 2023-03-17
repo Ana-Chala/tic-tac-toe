@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+:root{
+    --button-one: hsla(178, 60%, 48%, 1);
+    --button-two: hsla(39, 88%, 58%, 1);
+    --button-one-active: hsla(178, 76%, 66%, 1);
+    --button-two-active: hsla(39, 100%, 69%, 1);
+    --bacground-color: hsla(200, 32%, 15%, 1);
+    --box-color:hsla(200, 35%, 19%, 1);
+    --letter-color: hsla(199, 24%, 73%, 1);
+    --silver-hover: hsla(198, 35%, 89%, 1);
+    --samy-dark-navy: #1F3641;
+
+ 
+}
+
+body{
+    background-color: var(--bacground-color);
+    display: flex;
+    max-height: 100%;
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/*this is styles for overlay element which will pops if the x-player loose*/
+
+.overlay {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%); 
+    left: 0;
+    width: 100vw; /* 100% of viewport width */
+    height: 266px;
+    background-color:var(--samy-dark-navy);/* semi-transparent black background */
+    z-index: 999;
+    display: none;
+ }
+
+ .overlay.active{
+    display: block;
+ }
+ 
+ .youLose{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    margin-top: 45px;
+ }
+
+ .roundO{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:24px;
+ }
+
+ .buttons0{
+    display: flex;
+    align-items: center;
+    gap:16px;
+ }
+
+ .roundO h1{
+font-family:sans-serif, 'Outfit';
+font-size: 40px;
+font-weight: 700;
+line-height: 50px;
+letter-spacing: 2.5px;
+text-align: left;
+color: var(--button-two);
+   
+    
+ }
+
+ .lost p{
+    font-family:sans-serif, 'Outfit';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--letter-color);
+ }
+
+
+ .quit{
+    height: 52px;
+    width: 76px;
+    border-radius: 10px;
+    background-color: var(--letter-color);
+    border: none;
+    font-family: sans-serif, 'Outfit';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color:var(--bacground-color);
+ 
+ }
+
+
+ .nextRound{
+    height: 52px;
+    width: 146px;
+    border-radius: 10px;
+    background-color: var(--button-two);
+    border: none;
+    font-family: sans-serif, 'Outfit';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--bacground-color);
+ }
+
+/*----------------------needs styling for each element-----------------------------*/
+.overlayXwins{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%); 
+    left: 0;
+    width: 100vw; /* 100% of viewport width */
+    height: 266px;
+    background-color:var(--samy-dark-navy);/* semi-transparent black background */
+    z-index: 999;
+    display: none;
+}
+.overlayXwins.active{
+    display: block;
+}
+
+/*------------------- needs add styling for each element--------------------------------*/
+.restartGame{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%); 
+    left: 0;
+    width: 100vw; /* 100% of viewport width */
+    height: 266px;
+    background-color:var(--samy-dark-navy);/* semi-transparent black background */
+    z-index: 999;
+    display: none;
+}
+
+
+.restartGame.active{
+    display: block;
+}
+/*--------------------------------------------------*/
+.box{
+
+    height: 140px;
+    width: 140px;
+    border-radius: 15px;
+    background-color: var(--box-color);
+    box-shadow:  0px -8px 0px 0px hsla(201, 45%, 11%, 1) inset;
+    border:none;
+}
+
+
+.box:hover{
+    cursor: pointer;
+}
+
+.box.win-x{
+    background-color: var(--button-two);
+    box-shadow: 0px -8px 0px 0px hsla(39, 83%, 44%, 1) inset;
+}
+
+.box.win-o{
+    background-color: var(--button-one);
+    box-shadow: 0px -8px 0px 0px hsla(178, 79%, 31%, 1) inset;
+}
+
+
+
+.middle-box{
+    height: 52px;
+width: 140px;
+border-radius: 10px;
+background-color: var(--box-color);
+position: absolute;
+left: 160px;
+top:139px;
+border: none;
+
+}
+
+.middle-box p{
+   
+font-family: 'Outfit', sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 1px;
+text-align: center;
+color:var(--letter-color);
+position:relative;
+}
+
+
+.middle-box:hover{
+    cursor: pointer;
+}
+
+.ix{
+    transform:scale(0.3);
+    position:absolute;
+    top:-9px;
+    left:9px;
+}
+
+.ix.passive{
+    display: none;
+}
+
+.zero{
+    transform:scale(0.3);
+    position:absolute;
+    top:-9px;
+    left:9px;
+    display: none;
+}
+
+.zero.active{
+    display: block;
+}
+
+.TU{
+    position:relative;
+    top:-4px;
+    left:11px;
+}
+
+
+.heado{
+    display: flex;
+    position: relative;
+   
+    
+}
+
+.logo{
+position: absolute;
+top:141px;
+left:2px;
+}
+
+.restart{
+    height: 52px;
+width: 52px;
+border-radius: 10px;
+background-color: var(--letter-color);
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+left:408px;
+top:139px;
+}
+
+
+
+/*----------------------------------------------------------------------*/
+.first-part{
+    margin-top: 211px;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.line-one{
+display: flex;
+gap: 20px;
+}
+
+.line-two{
+    display: flex;
+    gap: 20px;
+}
+
+.line-three{
+    display: flex;
+    gap: 20px;
+}
+
+
+.second-part{
+    margin-top: 32px;
+    display: flex;
+    gap:19px;
+}
+
+.window{
+    height: 72px;
+width: 140px;
+border-radius: 15px;
+
+}
+
+.window.one{
+background-color: var(--button-one);
+position: relative;
+}
+
+.window.two{
+    background-color: var(--letter-color);
+    position: relative;
+}
+
+.window.three{
+    background-color: var(--button-two);
+    position: relative;
+}
+
+
+.ex-you{
+position: absolute;
+top:13px;
+left:41.5px;
+}
+
+.second-part p{
+
+font-family:'Outfit', sans-serif;
+font-size: 14px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0.875px;
+text-align: center;
+
+}
+
+.second-part h1{
+   
+font-family: 'Outfit', sans-serif;
+font-size: 24px;
+font-weight: 700;
+line-height: 30px;
+letter-spacing: 1.5px;
+text-align: center;
+
+}
+
+.ties{
+    position: absolute;
+    top:13px;
+    left:54.5px;
+}
+
+.o-cpu{
+    position: absolute;
+    top:13px;
+    left:42px;
+}
+
+.score-ex-0{
+position: relative;
+top:31px;
+left:2px;
+}
+
+.score-ties-0{
+position: relative;
+top:31px;
+left:2px;
+}
+
+.score-o-cpu-0{
+position: relative;
+top:31px;
+left:2px;
+}
+
+
+/*active classes-thats how I am going to add symbols in boxes*/
+
+
+.box.active-x{
+    background-image: url(./assets/icon-x.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.box.active-0{
+    background-image: url(./assets/icon-o.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.box.active-0-outline{
+    background-image: url(./assets/icon-o-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.box.active-x-outline{
+    background-image: url(./assets/icon-x-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+/*vizualshi damrcha panjrebis stilebis dasruleba , aseve titoeul uhraze o-s shemtxvevashi mteli ujra ro unda gakvitldes da
+x-is shemtxvevashi galurjdes xolo simbolo ujris feri gaxdes da aseve mogebis shemtxvevas rogor vadgent,
+me vfikrob rom modulusi gamoviyeno da minimum 5 dawkapebis shemtxvevashi romeli simbolos raodenobac aris kenti is aris mogebuli
+es logika kodshi unda gavwero rogorme.
+aseve unda vkitxo mentors rom ert html-shi archeuli simbolo rogor gadavitano shemdeg failshi da cpus merestvis davitoveb
+is logika isev garshemo ujrebis chaketva.
+refreshis gilakma ubralod unda moashoros dapas kvela is funkcia rac mivanichet tamashis dros.
+classList.remove- rac axla vici jer.
+
+
+*/

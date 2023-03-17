@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container start">
+        
+        <div class="heado">
+            <img src="./assets/logo.svg" class="logo">
+        <button class="middle-box">
+            <svg width="64" 
+            height="64" 
+            xmlns="http://www.w3.org/2000/svg"
+            class="ix">
+            <path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" 
+            fill="#A8A8A8" 
+            fill-rule="evenodd"/>
+        </svg>
+        <svg width="64" 
+        height="64" 
+        xmlns="http://www.w3.org/2000/svg"
+        class="zero">
+        <path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"
+         fill="#A8A8A8"/>
+        </svg>
+      <p class="TU">TURN</p>
+        </button>
+        <button class="restart"><img src="./assets/icon-restart.svg"></button>
+        
+        </div>
+        
+        <div class="first-part">
+            <div class="line-one">
+                <button class="box one" id="0"></button>
+                <button class="box two" id="1"></button>
+                <button class="box three" id="2"></button>
+            </div>
+            <div class="line-two">
+                <button class="box four" id="3"></button>
+                <button class="box five" id="4"></button>
+                <button class="box six" id="5"></button>
+            </div>
+            <div class="line-three">
+                <button class="box seven" id="6"></button>
+                <button class="box eight" id="7"></button>
+                <button class="box nine" id="8"></button>
+            </div>
+            
+        </div>
+        <div class="second-part">
+            <div class="window one">
+             <div class="score-ex-0"><h1>0</h1></div>
+             <div class="ex-you"><p>x(you)</p></div>
+            </div>
+            <div class="window two">
+                <div class="score-ties-0"><h1>0</h1></div>
+               <div class="ties"><p>ties</p></div>
+            </div>
+            <div class="window three">
+                <div class="score-o-cpu-0"><h1>0</h1></div>
+                <div class="o-cpu"><p>o(cpu)</p>
+                </div>
+        
+        </div>
+        </div>
+
+        <div class="third-part"></div>
+    </div>
+
+    <!--It will pop up when x-symbol player loose and o wins-->
+    <div class="overlay">
+        <div class="youLose">
+     <div class="lost"><p>OH NO, YOU LOST…</p></div>
+     <div class="roundO">
+        <img src="./assets/icon-o.svg" alt="zero">
+        <h1>TAKES THE ROUND</h1>
+     </div>
+     <div class="buttons0">
+     <button class="quit">QUIT</button>
+     <button class="nextRound">NEXT ROUND</button>
+     </div>
+    </div>
+    </div>
+
+    <!-------------------------------------------------------------------------->
+    <div class="overlayXwins">
+        <div class="youLose">
+            <div class="win"><p>YOU WON!</p></div>
+            <div class="roundX">
+               <img src="./assets/icon-x.svg" alt="zero">
+               <h1>TAKES THE ROUND</h1>
+            </div>
+            <div class="buttons0">
+            <button class="quit">QUIT</button>
+            <button class="nextRound">NEXT ROUND</button>
+            </div>
+           </div>
+    </div>
+    <!--------------------------------------------------------------------------->
+    <div class="restartGame">
+        <div class="youLose">
+               <h1>RESTART GAME?</h1>
+            </div>
+            <div class="buttons0">
+            <button class="cancelBtn">NO, CANCEL</button>
+            <button class="yesBtn">YES, RESTART</button>
+            </div>
+           </div>
+     <!------------------------------------------------------------------------------>      
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+<!--https://www.figma.com/file/mfsFOVfgpgaJR3LPWRlP03/tic-tac-toe?node-id=1%3A24&t=xdXN1yubEIFaifxd-0-->
