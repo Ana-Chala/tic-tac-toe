@@ -141,6 +141,51 @@ color: var(--button-two);
     display: block;
 }
 
+.roundX{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:24px;
+}
+
+.roundX h1{
+font-family:sans-serif, 'Outfit';
+font-size: 40px;
+font-weight: 700;
+line-height: 50px;
+letter-spacing: 2.5px;
+text-align: left;
+color:var(--button-one);
+   
+}
+
+
+.quits{
+    height: 52px;
+    width: 76px;
+    border-radius: 10px;
+    background-color: var(--letter-color);
+    border: none;
+    font-family: sans-serif, 'Outfit';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color:var(--bacground-color);
+ 
+ }
+
+.win p{
+    font-family:sans-serif, 'Outfit';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--letter-color);
+}
+
 /*------------------- needs add styling for each element--------------------------------*/
 .restartGame{
     position: fixed;
