@@ -4,18 +4,18 @@ const container=document.querySelector('.container');
 const ix=document.querySelector('.ix');
 const zero=document.querySelector('.zero');
 const middleBox=document.querySelector('.middle-box');
-const overlay=document.querySelector('.overlay')
+const overlay=document.querySelector('.overlay');
+const overlayXwins=document.querySelector('.overlayXwins');
+const quit=document.querySelector('.quit');
+const quits=document.querySelector('.quits');
 //const activeX=document.querySelector('.active-x')
 
 /*It changes symbols from x to 0 and vice versa*/
 
-let count=0;
 
 
 box.forEach(box=>{
-  box.addEventListener('click', ()=>{
-    count++;
-console.log(count);
+  box.addEventListener('click',()=>{
     if(!ix.classList.contains('passive')){
       ix.classList.add('passive');
       zero.classList.add('active');
@@ -32,7 +32,7 @@ console.log(count);
       //it doesn't works;
   });
 
-  },{once: true});
+  });
 
 /* ---------------------------------------------------------------------------------------------- */
 refresh.addEventListener('click',()=>{
@@ -40,29 +40,64 @@ refresh.addEventListener('click',()=>{
     box[i].classList.remove('active-x');
     box[i].classList.remove('active-0');
     overlay.classList.remove('active');
+    overlayXwins.classList.remove('active');
+    if(zero.classList.contains('active')){
+      zero.classList.remove('active');
+      ix.classList.remove('passive');
+    }
   }
-})
+});
+
+
+quit.addEventListener('click',()=>{
+  for(let i=0; i<box.length; i++){
+    box[i].classList.remove('active-x');
+    box[i].classList.remove('active-0');
+    overlay.classList.remove('active');
+    overlayXwins.classList.remove('active');
+    if(zero.classList.contains('active')){
+      zero.classList.remove('active');
+      ix.classList.remove('passive');
+    }
+  }
+});
+
+quits.addEventListener('click',()=>{
+  for(let i=0; i<box.length; i++){
+    box[i].classList.remove('active-x');
+    box[i].classList.remove('active-0');
+    overlay.classList.remove('active');
+    overlayXwins.classList.remove('active');
+    if(zero.classList.contains('active')){
+      zero.classList.remove('active');
+      ix.classList.remove('passive');
+    }
+  }
+});
+
+
+
 
 
 /*------------------------------------------------------------------------------------------------- */
 function checkWinner (){
   if(box[0].classList.contains('active-x')&&box[1].classList.contains('active-x')&&box[2].classList.contains('active-x')){
-console.log('giugu')
+    overlayXwins.classList.add('active');
   }else if(box[3].classList.contains('active-x')&&box[4].classList.contains('active-x')&&box[5].classList.contains('active-x'))
   {
-    
+    overlayXwins.classList.add('active');
   }else if(box[6].classList.contains('active-x')&&box[7].classList.contains('active-x')&&box[8].classList.contains('active-x')){
-   
+    overlayXwins.classList.add('active');
   }else if(box[0].classList.contains('active-x')&&box[3].classList.contains('active-x')&&box[6].classList.contains('active-x')){
-
+    overlayXwins.classList.add('active');
   }else if(box[1].classList.contains('active-x')&&box[4].classList.contains('active-x')&&box[7].classList.contains('active-x')){
-   
+    overlayXwins.classList.add('active');
   }else if(box[2].classList.contains('active-x')&&box[5].classList.contains('active-x')&&box[8].classList.contains('active-x')){
-   
+    overlayXwins.classList.add('active');
   }else if(box[0].classList.contains('active-x')&&box[4].classList.contains('active-x')&&box[8].classList.contains('active-x')){
-    
+    overlayXwins.classList.add('active');
   }else if(box[2].classList.contains('active-x')&&box[4].classList.contains('active-x')&&box[6].classList.contains('active-x')){
-   
+    overlayXwins.classList.add('active');
   }
 }; //it works
 
